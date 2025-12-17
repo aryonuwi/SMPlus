@@ -58,3 +58,82 @@ Aktifkan pada `php.ini`:
 git clone https://github.com/aryonuwi/SMPlus.git
 cd SMPlus
 ```
+
+- `Install Backend Dependencies`
+```
+composer install
+```
+
+- `Setup Environment`
+```
+copy .env.example .env
+```
+
+- `Generate application key`
+``` 
+php artisan key:generate
+```
+
+- `Konfigurasi Database (PostgreSQL)`
+```
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=sm_plus_test
+DB_USERNAME=postgres
+DB_PASSWORD=your_password
+```
+
+- `Konfigurasi Email (SMTP)`
+```
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=587
+MAIL_USERNAME=xxxx
+MAIL_PASSWORD=xxxx
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=noreply@smplus.test
+MAIL_FROM_NAME="SMPlus Dashboard"
+
+REPORT_RECIPIENT_EMAIL=hr@company.com
+CANDIDATE_NAME="Aryo"
+```
+
+- `Jalankan Database Migration & Seeder`
+```
+php artisan migrate
+php artisan db:seed
+```
+
+- `Install Frontend Dependencies`
+```
+npm install
+```
+
+## RUNNING APPLICATION
+- `Jalankan Backend (Laravel)`
+```
+php artisan serve
+```
+`Backend berjalan di:`
+```
+http://localhost:8000
+```
+- `Jalankan Frontend`
+`Buka terminal baru:`
+```
+npm run dev
+```
+`Vite berjalan di:`
+```
+http://localhost:5173
+```
+** Penting: **
+`Karena menggunakan InertiaJS, aplikasi diakses melalui Laravel, bukan Vite:`
+```
+http://localhost:8000
+```
+- `Akses Aplikasi`
+```
+http://localhost:8000
+```
